@@ -11,25 +11,52 @@
     <div id="content">
         <div class="formAddress">
             <form id="getLocation" action="" method="post">
-                <span>Enter Location</span>
-                <label for="address"></label>
-                <input id="address" name="address" type="text">
-                <button id="submitLocation" name="submitButton">OK</button>
+                <div class="medium-text">Address</div>
+                <input class="input-text" id="address" name="address" type="text">
+                <button class="purple-button" id="submitLocation" name="submitButton">OK</button>
             </form>
         </div>
+        <div class="nav-bar" >
+            <div class="medium-text">Weather Report Card</div>
+            <button class="refresh purple-button">Refresh</button>
+        </div>
+        
         <div class="weather-report">
-            <div class="address"></div>
-            <div class="date"></div>
-            <div class="time"></div>
-            <div class="wind"></div>
-            <div class="humidity"></div>
-            <div class="temperature-wrapper">
-                <div class="kelvin hidden"></div>
-                <div class="temperature"></div>
-                <div class="celsius"></div>
-                <div class="fahrenheit"></div>
+            <div class="weather-report-wrapper">
+                <div class="small-text">Address</div>
+                <div class="address small-text"></div>
             </div>
-            <div class="description"></div>
+            <div class="weather-report-wrapper">
+                <div class="small-text">Date</div>
+                <div class="date small-text"></div>
+            </div>
+            <div class="weather-report-wrapper">
+                <div class="small-text">Time</div>
+                <div class="time small-text"></div>
+            </div>
+            <div class="weather-report-wrapper">
+                <div class="small-text">Wind Speed (meter/sec)</div>
+                <div class="wind small-text"></div>
+            </div>
+            <div class="weather-report-wrapper">
+                <div class="small-text">Humidity (% percentage)</div>
+                <div class="humidity small-text"></div>
+            </div>
+            <div class="weather-report-wrapper">
+                <div class="small-text">Temperature (<span id="span-temperature">Celsius</span>) </div>
+                <div class="temperature-wrapper">
+                    <div class="kelvin hidden"></div>
+                    <div class="temperature small-text"></div>
+                    <div class="temperature-buttons">
+                        <button class="celsius purple-button">&#8451;</button>
+                        <button class="fahrenheit purple-button">&#8457;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-report-wrapper">
+                <div class="small-text">Description</div>
+                <div class="description small-text"></div>
+            </div>
         </div>
     </div>
 </body>
