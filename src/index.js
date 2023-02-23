@@ -1,30 +1,45 @@
-import displayWeather from "./modules/DisplayWeatherDOM";
+import "./style.css";
+import {
+  displayWeather,
+  displayCelsius,
+  displayFahrenheit,
+} from "./modules/DisplayWeatherDOM";
 import getLatLong from "./modules/GetLatLongFromAddress";
 import getWeather from "./modules/GetWeather";
+import { getAddress, setAddress } from "./GlobalVariables";
 
 const locationSubmitButton = document.querySelector("#submitLocation");
-const celsiusDiv = document.querySelector(".celsius");
-const fahrenheitDiv = document.querySelector(".fahrenheit");
+const celsiusButton = document.querySelector(".celsius");
+const fahrenheitButton = document.querySelector(".fahrenheit");
+const refreshButton = document.querySelector(".refresh");
 
-const getLocation = async function(event){
-    event.preventDefault();
-    const form = document.forms.getLocation;
-    const formData = new FormData(form);
-    form.reset();
-    const latLong = await getLatLong(formData.get("address"));
-    const weatherJSON = await getWeather(latLong.lat, latLong.long);
-    displayWeather(weatherJSON,formData.get("address"));
-    // console.log(formData.get("locationCity"), formData.get("locationCountry"));
-}
+const getLocation = async function (event) {
+  event.preventDefault();
+  const form = document.forms.getLocation;
+  const formData = new FormData(form);
+  form.reset();
+  setAddress(formData.get("address"));
+  const latLong = await getLatLong(formData.get("address"));
+  const weatherJSON = await getWeather(latLong.lat, latLong.long);
+  displayWeather(weatherJSON, formData.get("address"));
+  // console.log(formData.get("locationCity"), formData.get("locationCountry"));
+};
 
-const changeToCelsius = function(){
+const changeToCelsius = function () {
+  displayCelsius();
+};
 
-}
+const changeToFahrenheit = function () {
+  displayFahrenheit();
+};
 
-const changeToFahrenheit = function(){
+const refreshWeather = async () => {
+  const latLong = await getLatLong(getAddress());
+  const weatherJSON = await getWeather(latLong.lat, latLong.long);
+  displayWeather(weatherJSON, getAddress());
+};
 
-}
-
-locationSubmitButton.addEventListener("click",getLocation);
-celsiusDiv.addEventListener("click",changeToCelsius);
-fahrenheitDiv.addEventListener("click",changeToFahrenheit);
+locationSubmitButton.addEventListener("click", getLocation);
+celsiusButton.addEventListener("click", changeToCelsius);
+fahrenheitButton.addEventListener("click", changeToFahrenheit);
+refreshButton.addEventListener("click", refreshWeather);
