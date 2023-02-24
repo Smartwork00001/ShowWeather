@@ -7,6 +7,7 @@ import {
 import getLatLong from "./modules/GetLatLongFromAddress";
 import getWeather from "./modules/GetWeather";
 import { getAddress, setAddress } from "./GlobalVariables";
+import updateTime from "./modules/UpdateTimeDOM";
 
 const locationSubmitButton = document.querySelector("#submitLocation");
 const celsiusButton = document.querySelector(".celsius");
@@ -43,3 +44,5 @@ locationSubmitButton.addEventListener("click", getLocation);
 celsiusButton.addEventListener("click", changeToCelsius);
 fahrenheitButton.addEventListener("click", changeToFahrenheit);
 refreshButton.addEventListener("click", refreshWeather);
+
+setInterval(updateTime,1000);
