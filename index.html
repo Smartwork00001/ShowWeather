@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="https://www.feirox.com/rivu/2016/04/Klara-1-1.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
@@ -11,42 +12,45 @@
     <div id="content">
         <div class="formAddress">
             <form id="getLocation" action="" method="post">
-                <div class="medium-text">Address</div>
-                <input class="input-text" id="address" name="address" type="text">
+                <div class="form-input">
+                    <span class="medium-text"><img alt="location access" src="https://img.icons8.com/ios-filled/50/000000/marker.png" style="cursor: pointer; width: 30px;"></span>
+                    <input class="input-text small-text" id="address" name="address" type="text">
+                </div>
                 <button class="purple-button" id="submitLocation" name="submitButton">OK</button>
             </form>
         </div>
         <div class="nav-bar" >
-            <div class="medium-text">Weather Report Card</div>
+            <img alt="app-logo" src="https://www.feirox.com/rivu/2016/04/Klara-1-1.png" style="width: 60px;">
+            <div class="medium-text">Current Weather</div>
             <button class="refresh purple-button">Refresh</button>
         </div>
         
         <div class="weather-report">
             <div class="weather-report-wrapper">
-                <div class="small-text">Address</div>
-                <div class="address small-text"></div>
+                <div class="small-text white-text">Address</div>
+                <div class="address small-text white-text"></div>
             </div>
             <div class="weather-report-wrapper">
-                <div class="small-text">Date</div>
-                <div class="date small-text"></div>
+                <div class="small-text white-text">Date</div>
+                <div class="date small-text white-text"></div>
             </div>
             <div class="weather-report-wrapper">
-                <div class="small-text">Time</div>
-                <div class="time small-text"></div>
+                <div class="small-text white-text">Time</div>
+                <div class="time small-text white-text"></div>
             </div>
             <div class="weather-report-wrapper">
-                <div class="small-text">Wind Speed (meter/sec)</div>
-                <div class="wind small-text"></div>
+                <div class="small-text white-text">Wind Speed (meter/sec)</div>
+                <div class="wind small-text white-text"></div>
             </div>
             <div class="weather-report-wrapper">
-                <div class="small-text">Humidity (% percentage)</div>
-                <div class="humidity small-text"></div>
+                <div class="small-text white-text">Humidity (% percentage)</div>
+                <div class="humidity small-text white-text"></div>
             </div>
             <div class="weather-report-wrapper">
-                <div class="small-text">Temperature (<span id="span-temperature">Celsius</span>) </div>
+                <div class="small-text white-text">Temperature (<span id="span-temperature">Celsius</span>) </div>
                 <div class="temperature-wrapper">
                     <div class="kelvin hidden"></div>
-                    <div class="temperature small-text"></div>
+                    <div class="temperature small-text white-text"></div>
                     <div class="temperature-buttons">
                         <button class="celsius purple-button">&#8451;</button>
                         <button class="fahrenheit purple-button">&#8457;</button>
@@ -54,8 +58,8 @@
                 </div>
             </div>
             <div class="weather-report-wrapper">
-                <div class="small-text">Description</div>
-                <div class="description small-text"></div>
+                <div class="small-text white-text">Description</div>
+                <div class="description small-text white-text"></div>
             </div>
         </div>
     </div>
